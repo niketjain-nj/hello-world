@@ -9,11 +9,11 @@ Registration Page
 <br>  
 <form>  
   
-<label> Firstname </label>         
+<label> First Name </label>         
 <input type="text" name="firstname" size="15"/> <br> <br>  
-<label> Middlename: </label>     
+<label> Middle Name: </label>     
 <input type="text" name="middlename" size="15"/> <br> <br>  
-<label> Lastname: </label>         
+<label> Last Name: </label>         
 <input type="text" name="lastname" size="15"/> <br> <br>  
   
 <label>   
@@ -23,7 +23,8 @@ Course :
 <option value="Course">Course</option>  
 <option value="BCA">BCA</option>  
 <option value="BBA">BBA</option>  
-<option value="B.Tech">B.Tech</option>  
+<option value="B.Tech">B.Tech</option>
+<option value="B.E.">B.E</option>
 <option value="MBA">MBA</option>  
 <option value="MCA">MCA</option>  
 <option value="M.Tech">M.Tech</option>  
@@ -34,17 +35,17 @@ Course :
 <label>   
 Gender :  
 </label><br>  
-<input type="radio" name="male"/> Male <br>  
-<input type="radio" name="female"/> Female <br>  
-<input type="radio" name="other"/> Other  
+<input type="radio" name="Male"/> Male <br>  
+<input type="radio" name="Female"/> Female <br>  
+<input type="radio" name="Other"/> Other  
 <br>  
 <br>  
   
 <label>   
 Phone :  
 </label>  
-<input type="text" name="country code"  value="+91" size="2"/>   
-<input type="text" name="phone" size="10"/> <br> <br>  
+<input type="text" name="Country Code"  value="+91" size="2"/>   
+<input type="text" name="Phone" size="10"/> <br> <br>  
 Address  
 <br>  
 <textarea cols="80" rows="5" value="address">  

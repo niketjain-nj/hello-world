@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Camp Registration</title>
+    <title>Course Evaluation Survey</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <style>
       html, body {
       min-height: 100%;
       }
-      body, div, form, input, select, textarea, label, p { 
+      body, input { 
       padding: 0;
       margin: 0;
       outline: none;
@@ -17,161 +16,78 @@
       color: #666;
       line-height: 22px;
       }
-      h1 {
-      position: absolute;
-      margin: 0;
-      font-size: 40px;
-      color: #fff;
-      z-index: 2;
- line-height: 83px;
+      h1, h4 {
+      font-weight: 400;
       }
-      textarea {
-      width: calc(100% - 12px);
-      padding: 5px;
+      h4 {
+      margin: 22px 0 4px;
       }
-      .testbox {
+      h5 {
+      text-transform: uppercase;
+      color: #095484;
+      }
+      .main-block {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: inherit;
-      padding: 20px;
+      padding: 3px;
       }
       form {
       width: 100%;
       padding: 20px;
-      border-radius: 6px;
+      box-shadow: 0 2px 5px #ccc; 
       background: #fff;
-      box-shadow: 0 0 8px #006622; 
-      }
-      .banner {
-      position: relative;
-      height: 300px;
-      background-image: url("/uploads/media/default/0001/02/e2502bb5e1dab7d5cc9b011c745033821aad632c.jpeg");  
-      background-size: cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      }
-      .banner::after {
-      content: "";
-      background-color: rgba(0, 0, 0, 0.2); 
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      }
-      input, select, textarea {
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-      border-radius: 3px;
       }
       input {
       width: calc(100% - 10px);
       padding: 5px;
-      }
-      input[type="date"] {
-      padding: 4px 5px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+      vertical-align: middle;
       }
       textarea {
-      width: calc(100% - 12px);
-      padding: 5px;
-    }
-      .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
-      color:  #006622;
+      width: calc(100% - 6px);
+      outline: none;
       }
-      .item input:hover, .item select:hover, .item textarea:hover {
-      border: 1px solid transparent;
-      box-shadow: 0 0 3px 0  #006622;
-      color: #006622;
+      input:hover, textarea:hover {
+      outline: none;
+      border: 1px solid #095484;
       }
-      .item {
-      position: relative;
-      margin: 10px 0;
+      th, td {
+      width: 15%;
+      padding: 15px 0;
+      border-bottom: 1px solid #ccc;
+      text-align: center;
+      vertical-align: unset;
+      line-height: 18px;
+      font-weight: 400;
+      word-break: break-all;
       }
-      .item span {
-      color: red;
+      .additional-question th, .additional-question td {
+      width: 38%;
       }
-      input[type="date"]::-webkit-inner-spin-button {
-      display: none;
+      .course-rate th, .course-rate td {
+      width: 19%;
       }
-      .item i, input[type="date"]::-webkit-calendar-picker-indicator {
-      position: absolute;
-      font-size: 20px;
-      color: #00b33c;
+      .first-col, .additional-question  .first-col, .course-rate .first-col {
+      width: 24%;
+      text-align: left;
       }
-      .item i {
-      right: 1%;
-      top: 30px;
-      z-index: 1;
-      }
- .week {
-      display:flex;
-      justfiy-content:space-between;
-      }
-      .colums {
-      display:flex;
-      justify-content:space-between;
-      flex-direction:row;
-      flex-wrap:wrap;
-      }
-      .colums div {
-      width:48%;
-      }
-      [type="date"]::-webkit-calendar-picker-indicator {
-      right: 1%;
-      z-index: 2;
-      opacity: 0;
-      cursor: pointer;
-      }
-      input[type=radio], input[type=checkbox]  {
-      display: none;
-      }
-      label.radio {
-      position: relative;
-  display: inline-block;
-      margin: 5px 20px 15px 0;
-      cursor: pointer;
-      }
-      .question span {
-      margin-left: 30px;
+      .question, .comments {
+      margin: 15px 0 5px;
       }
       .question-answer label {
-      display: block;
+      display: inline-block;
+      padding: 0 20px 15px 0;
       }
-      label.radio:before {
-      content: "";
-      position: absolute;
-      left: 0;
-      width: 17px;
-      height: 17px;
-      border-radius: 50%;
-      border: 2px solid #ccc;
+      .question-answer input {
+      width: auto;
       }
-      input[type=radio]:checked + label:before, label.radio:hover:before {
-      border: 2px solid  #006622;
-      }
-      label.radio:after {
-      content: "";
-      position: absolute;
-      top: 6px;
-      left: 5px;
-      width: 8px;
-      height: 4px;
-      border: 3px solid  #006622;
-      border-top: none;
-      border-right: none;
-      transform: rotate(-45deg);
-      opacity: 0;
-      }
-      input[type=radio]:checked + label:after {
-      opacity: 1;
-      }
-      .flax {
-      display:flex;
-      justify-content:space-around;
+      .question-answer, table {
+      width: 100%;
       }
       .btn-block {
-      margin-top: 10px;
+      margin-top: 20px;
       text-align: center;
       }
       button {
@@ -179,225 +95,339 @@
       padding: 10px;
       border: none;
       border-radius: 5px; 
-      background:  #006622;
+      background: #095484;
       font-size: 16px;
       color: #fff;
-cursor: pointer;
+      cursor: pointer;
       }
       button:hover {
-      background:  #00b33c;
+      background: #0666a3;
       }
       @media (min-width: 568px) {
-      .name-item, .city-item {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      }
-      .name-item input, .name-item div {
-      width: calc(50% - 20px);
-      }
-      .name-item div input {
-      width:97%;}
-      .name-item div label {
-      display:block;
-      padding-bottom:5px;
+      th, td {
+      word-break: keep-all;
       }
       }
     </style>
   </head>
   <body>
-    <div class="testbox">
-      <form>
-        <div class="banner">
-          <h1>Camp Registration</h1>
+    <div class="main-block">
+      <form action="/">
+        <h1>Course Evaluation Survey</h1>
+        <h4>COURSE</h4>
+        <input type="text"/>
+        <h4>INSTRUCTOR</h4>
+        <input type="text"/>
+        <h4>TERM AND YEAR</h4>
+        <input type="text"/>
+        <h5>Teaching approaches</h5>
+        <div>
+          <h4>Untitled</h4>
+          <table>
+            <tr>
+              <th class="first-col"></th>
+              <th>Strongly Disagree</th>
+              <th>Disagree</th>
+              <th>Neutral</th>
+              <th>Agree</th>
+              <th>Strongly Agree</th>
+            </tr>
+            <tr>
+              <td class="first-col">1. The instructor stimulated my interest in the subject.</td>
+              <td><input type="radio" value="none" name="interest" /></td>
+              <td><input type="radio" value="none" name="interest" /></td>
+              <td><input type="radio" value="none" name="interest" /></td>
+              <td><input type="radio" value="none" name="interest" /></td>
+              <td><input type="radio" value="none" name="interest" /></td>
+            </tr>
+            <tr>
+              <td class="first-col">2. The instructor managed classroom time and pace well.</td>
+              <td><input type="radio" value="none" name="managed" /></td>
+              <td><input type="radio" value="none" name="managed" /></td>
+              <td><input type="radio" value="none" name="managed" /></td>
+              <td><input type="radio" value="none" name="managed" /></td>
+              <td><input type="radio" value="none" name="managed" /></td>
+            </tr>
+            <tr>
+              <td class="first-col">3. The instructor was organized and prepared for every class</td>
+              <td><input type="radio" value="none" name="organized" /></td>
+              <td><input type="radio" value="none" name="organized" /></td>
+              <td><input type="radio" value="none" name="organized" /></td>
+              <td><input type="radio" value="none" name="organized" /></td>
+              <td><input type="radio" value="none" name="organized" /></td>
+            </tr>
+            <tr>
+              <td class="first-col">4. The instructor encouraged discussions and responded to questions.</td>
+              <td><input type="radio" value="none" name="encouraged" /></td>
+              <td><input type="radio" value="none" name="encouraged" /></td>
+              <td><input type="radio" value="none" name="encouraged" /></td>
+              <td><input type="radio" value="none" name="encouraged" /></td>
+              <td><input type="radio" value="none" name="encouraged" /></td>
+            </tr>
+            <tr>
+              <td class="first-col">5. The instructor demonstrated in-depth knowledge of the subject.</td>
+              <td><input type="radio" value="none" name="demonstrated" /></td>
+              <td><input type="radio" value="none" name="demonstrated" /></td>
+              <td><input type="radio" value="none" name="demonstrated" /></td>
+              <td><input type="radio" value="none" name="demonstrated" /></td>
+              <td><input type="radio" value="none" name="demonstrated" /></td>
+            </tr>
+            <tr>
+              <td class="first-col">6. The instructor appeared enthusiastic and interested.</td>
+              <td><input type="radio" value="none" name="appeared" /></td>
+              <td><input type="radio" value="none" name="appeared" /></td>
+              <td><input type="radio" value="none" name="appeared" /></td>
+              <td><input type="radio" value="none" name="appeared" /></td>
+              <td><input type="radio" value="none" name="appeared" /></td>
+            </tr>
+            <tr>
+              <td class="first-col">7. The instructor used a variety of instructional methods to reach the course objectives (e.g. group discussions, student presentations, etc.)</td>
+              <td><input type="radio" value="none" name="used" /></td>
+              <td><input type="radio" value="none" name="used" /></td>
+              <td><input type="radio" value="none" name="used" /></td>
+              <td><input type="radio" value="none" name="used" /></td>
+              <td><input type="radio" value="none" name="used" /></td>
+            </tr>
+            <tr>
+              <td class="first-col">8. The instructor challenged students to do their best work.</td>
+              <td><input type="radio" value="none" name="challenged" /></td>
+              <td><input type="radio" value="none" name="challenged" /></td>
+              <td><input type="radio" value="none" name="challenged" /></td>
+              <td><input type="radio" value="none" name="challenged" /></td>
+              <td><input type="radio" value="none" name="challenged" /></td>
+            </tr>
+          </table>
         </div>
-        <br/>
-        <fieldset>
-          <legend>Participant Information</legend>
-<p>Participant 1</p>
-          <div class="item">
-            <label for="fname"> First Name<span>*</span></label>
-            <input id="fname" type="text" name="fname" />
-          </div>
-          <div class="item">
-            <label for="activity">Activity #<span>*</span></label>
-            <input id="activity" type="text" name="activity" />
-          </div>
-          <div class="item">
-            <label for="fee">Fee ($)<span>*</span></label>
-            <input id="fee" type="number" name="fee" />
-          </div>
-                   <div class="item">
-            <label for="bdate">Birth Date <span>*</span></label>
-            <input id="bdate" type="date" name="bdate" />
-            <i class="fas fa-calendar-alt"></i>
-          </div>
- <div class="item">
-             <p>Grade</p>
-            <select>
-              <option selected value="" disabled selected></option>
-             <option value="1" >1st</option>
-              <option value="2">2nd</option>
-              <option value="3">3rd</option>
-             <option value="4">4th</option>
-             <option value="5">5th</option>
-              <option value="6">6th</option>
-             <option value="7">7th</option>
-            <option value="8">8th</option>
-            <option value="9">9th</option>
-             <option value="10">10th</option>
-              <option value="11">11th</option>
-             <option value="12">12th</option>
-            </select>
-          </div>
-<p>Participant 2</p>
-  <div class="item">
-            <label for="fname"> First Name<span>*</span></label>
-            <input id="fname" type="text" name="fname" />
-          </div>
-          <div class="item">
-            <label for="activity">Activity #<span>*</span></label>
-            <input id="activity" type="text" name="activity" />
-          </div>
-          <div class="item">
-            <label for="fee1">Fee ($)<span>*</span></label>
-            <input id="fee1" type="number" name="fee1" />
-          </div>
-                   <div class="item">
-            <label for="bdate">Birth Date <span>*</span></label>
-            <input id="bdate" type="date" name="bdate" />
-            <i class="fas fa-calendar-alt"></i>
-          </div>
- <div class="item">
-             <p>Grade</p>
-            <select>
-              <option selected value="" disabled selected></option>
-              <option value="1" >1st</option>
-              <option value="2">2nd</option>
-              <option value="3">3rd</option>
-             <option value="4">4th</option>
-             <option value="5">5th</option>
-              <option value="6">6th</option>
-             <option value="7">7th</option>
-            <option value="8">8th</option>
-            <option value="9">9th</option>
-             <option value="10">10th</option>
-              <option value="11">11th</option>
-             <option value="12">12th</option>
-            </select>
-          </div>
-<p>Participant 3</p>
-  <div class="item">
-            <label for="fname"> First Name<span>*</span></label>
-            <input id="fname" type="text" name="fname" />
-          </div>
-          <div class="item">
-            <label for="activity">Activity #<span>*</span></label>
-            <input id="activity" type="text" name="activity" />
-          </div>
-          <div class="item">
-            <label for="fee2">Fee ($)<span>*</span></label>
-            <input id="fee2" type="number" name="fee2" />
-          </div>
-                        <div class="question">
-            <label>City Resident?<br/>(non-city residents add $5.00 for each participant)</label>
-            <div class="question-answer">
-              <div>
-                <input type="radio" value="none" id="radio_1" name="city"/>
-                <label for="radio_1" class="radio"><span>Yes - I am a city resident</span></label>
-              </div>
-              <div>
-                <input  type="radio" value="none" id="radio_2" name="city"/>
-                <label for="radio_2" class="radio"><span>No - I am not a city resident</span></label>
-              </div>
-                         </div>
-          </div>
-         <div>
-<span id="result"></span>
-          <button type="calc" id="calc"  onclick="calcNumbers()">Calculate</button>
+        <p class="question">9. The instructor was accessible outside of class.</p>
+        <div class="question-answer">
+          <label><input type="radio" value="none" name="accessible" /> yes</label>
+          <label><input type="radio" value="none" name="accessible" /> no</label>
         </div>
-               </fieldset>
-        <br/>
-        <fieldset>
-          <legend>Household / Adult Primary Contact</legend>
-           <div class="colums">
-          <div class="item">
-            <label for="fname"> First Name<span>*</span></label>
-            <input id="fname" type="text" name="fname" />
-          </div>
-          <div class="item">
-            <label for="lname"> Last Name<span>*</span></label>
-            <input id="lname" type="text" name="lname" />
-          </div>
- <div class="item">
-            <label for="address1">Address 1<span>*</span></label>
-            <input id="address1" type="text"   name="address1" />
-          </div>
-  <div class="item">
-            <label for="address2">Address 2<span>*</span></label>
-            <input id="address2" type="text"   name="address2" />
-          </div>
-  <div class="item">
-            <label for="city">City<span>*</span></label>
-            <input id="city" type="text"   name="city" />
-          </div>
- <div class="item">
-            <label for="state">State<span>*</span></label>
-            <input id="state" type="text"   name="state" />
-          </div>
-                             <div class="item">
-            <label for="eaddress">Email Address<span>*</span></label>
-            <input id="eaddress" type="text"   name="eaddress" />
-          </div>
-          <div class="item">
-            <label for="phone">Phone<span>*</span></label>
-            <input id="phone" type="tel"   name="phone" />
-          </div>
-          <div class="item">
-            <label for="zip">Zip<span>*</span></label>
-            <input id="zip" type="text"   name="zip" />
-          </div>
-                     
-                           <div class="question">
-            <label>Relationship to Participants:</label>
-            <div class="question-answer">
-              <div>
-                <input type="radio" value="none" id="radio_3" name="participants"/>
-                <label for="radio_3" class="radio"><span>Self</span></label>
-              </div>
-              <div>
-                <input  type="radio" value="none" id="radio_4" name="participants"/>
-                <label for="radio_4" class="radio"><span>Mother</span></label>
-              </div>
-              <div>
-                <input  type="radio" value="none" id="radio_5" name="participants"/>
-                <label for="radio_5" class="radio"><span>Father</span></label>
-              </div>
-              <div>
-                <input  type="radio" value="none" id="radio_6" name="participants"/>
-                <label for="radio_6" class="radio"><span>Guardian</span></label>
-              </div>
-              <div>
-                <input  type="radio" value="none" id="radio_7" name="participants"/>
-                <label for="radio_7" class="radio"><span>Other</span></label>
-<input type="text"/>
-              </div>
-            </div>
-          </div>
-                </fieldset>
+        <p class="question">10. Did the instructor actively attempt to prevent cheating in this course?</p>
+        <div class="question-answer">
+          <label><input type="radio" value="none" name="actively" /> yes</label>
+          <label><input type="radio" value="none" name="actively" /> no</label>
+        </div>
+        <p class="comments">Comments</p>
+        <textarea rows="5"></textarea>
+        <h5>Feedback and assessment</h5>
+        <div>
+          <h4>Untitled</h4>
+          <table>
+            <tr>
+              <th class="first-col"></th>
+              <th>Strongly Disagree</th>
+              <th>Disagree</th>
+              <th>Neutral</th>
+              <th>Agree</th>
+              <th>Strongly Agree</th>
+            </tr>
+            <tr>
+              <td class="first-col">11. Information about the assessment was communicated clearly</td>
+              <td><input type="radio" value="none" name="clearly" /></td>
+              <td><input type="radio" value="none" name="clearly" /></td>
+              <td><input type="radio" value="none" name="clearly" /></td>
+              <td><input type="radio" value="none" name="clearly" /></td>
+              <td><input type="radio" value="none" name="clearly" /></td>
+            </tr>
+            <tr>
+              <td class="first-col">12. Feedback was provided within the stated timeframe.</td>
+              <td><input type="radio" value="none" name="provided" /></td>
+              <td><input type="radio" value="none" name="provided" /></td>
+              <td><input type="radio" value="none" name="provided" /></td>
+              <td><input type="radio" value="none" name="provided" /></td>
+              <td><input type="radio" value="none" name="provided" /></td>
+            </tr>
+            <tr>
+              <td class="first-col">13. Feedback showed how to improve my work (e .g. corrections including comments).</td>
+              <td><input type="radio" value="none" name="showed" /></td>
+              <td><input type="radio" value="none" name="showed" /></td>
+              <td><input type="radio" value="none" name="showed" /></td>
+              <td><input type="radio" value="none" name="showed" /></td>
+              <td><input type="radio" value="none" name="showed" /></td>
+            </tr>
+          </table>
+        </div>
+        <p class="comments">Comments</p>
+        <textarea rows="5"></textarea>
+        <h5>Resources and administration</h5>
+        <div>
+          <h4>Untitled</h4>
+          <table>
+            <tr>
+              <th class="first-col"></th>
+              <th>Strongly Disagree</th>
+              <th>Disagree</th>
+              <th>Neutral</th>
+              <th>Agree</th>
+              <th>Strongly Agree</th>
+            </tr>
+            <tr>
+              <td class="first-col">14. The course was supported by adequate library resources.</td>
+              <td><input type="radio" value="none" name="supported" /></td>
+              <td><input type="radio" value="none" name="supported" /></td>
+              <td><input type="radio" value="none" name="supported" /></td>
+              <td><input type="radio" value="none" name="supported" /></td>
+              <td><input type="radio" value="none" name="supported" /></td>
+            </tr>
+            <tr>
+              <td class="first-col">15. Blackboard resources for the course were useful.</td>
+              <td><input type="radio" value="none" name="resources" /></td>
+              <td><input type="radio" value="none" name="resources" /></td>
+              <td><input type="radio" value="none" name="resources" /></td>
+              <td><input type="radio" value="none" name="resources" /></td>
+              <td><input type="radio" value="none" name="resources" /></td>
+            </tr>
+            <tr>
+              <td class="first-col">16. Instructor gave guidance on where to find resources.</td>
+              <td><input type="radio" value="none" name="guidance" /></td>
+              <td><input type="radio" value="none" name="guidance" /></td>
+              <td><input type="radio" value="none" name="guidance" /></td>
+              <td><input type="radio" value="none" name="guidance" /></td>
+              <td><input type="radio" value="none" name="guidance" /></td>
+            </tr>
+          </table>
+        </div>
+        <p class="comments">Comments</p>
+        <textarea rows="5"></textarea>
+        <h5>Additional question</h5>
+        <div class="additional-question">
+          <h4>Untitled</h4>
+          <table>
+            <tr>
+              <th class="first-col"></th>
+              <th>Yes</th>
+              <th>No</th>
+            </tr>
+            <tr>
+              <td class="first-col">17. The syllabus was explained at the beginning of the course.</td>
+              <td><input type="radio" value="none" name="syllabus" /></td>
+              <td><input type="radio" value="none" name="syllabus" /></td>
+            </tr>
+            <tr>
+              <td class="first-col">18. The course was delivered as outlined in the syllabus.</td>
+              <td><input type="radio" value="none" name="delivered" /></td>
+              <td><input type="radio" value="none" name="delivered" /></td>
+            </tr>
+            <tr>
+              <td class="first-col">19. Instructor explained the grading criteria of the course.</td>
+              <td><input type="radio" value="none" name="criteria" /></td>
+              <td><input type="radio" value="none" name="criteria" /></td>
+            </tr>
+            <tr>
+              <td class="first-col">20. Exams related to the course learning outcomes.</td>
+              <td><input type="radio" value="none" name="exams" /></td>
+              <td><input type="radio" value="none" name="exams" /></td>
+            </tr>
+            <tr>
+              <td class="first-col">21. Projects/ assignments related to the course learning outcomes.</td>
+              <td><input type="radio" value="none" name="assignments" /></td>
+              <td><input type="radio" value="none" name="assignments" /></td>
+            </tr>
+          </table>
+        </div>
+        <p class="comments">Comments</p>
+        <textarea rows="5"></textarea>
+        <h5>Overall experience</h5>
+        <p class="question">22. This was a worthwhile class</p>
+        <div class="question-answer">
+          <label><input type="radio" value="none" name="worthwhile" /> yes</label>
+          <label><input type="radio" value="none" name="worthwhile" /> no</label>
+        </div>
+        <p class="question">23. Would you recommend this course to a fellow
+          student?
+        </p>
+        <div class="question-answer">
+          <label><input type="radio" value="none" name="recommend" /> yes</label>
+          <label><input type="radio" value="none" name="recommend" /> no</label>
+        </div>
+        <div>
+          <h4>Untitled</h4>
+          <table>
+            <tr>
+              <th class="first-col"></th>
+              <th>Poor</th>
+              <th>Fair</th>
+              <th>Good</th>
+              <th>Very good</th>
+              <th>Excellent</th>
+            </tr>
+            <tr>
+              <td class="first-col">24. Overall, how do you rate your experience in this course?</td>
+              <td><input type="radio" value="none" name="rate" /></td>
+              <td><input type="radio" value="none" name="rate" /></td>
+              <td><input type="radio" value="none" name="rate" /></td>
+              <td><input type="radio" value="none" name="rate" /></td>
+              <td><input type="radio" value="none" name="rate" /></td>
+            </tr>
+          </table>
+        </div>
+        <div class="course-rate">
+          <h4>Untitled</h4>
+          <table>
+            <tr>
+              <th class="first-col"></th>
+              <th>A:0 – 4h</th>
+              <th>B:5 – 8h</th>
+              <th>C:9 – 12h</th>
+              <th>C:9 – 12h</th>
+            </tr>
+            <tr>
+              <td class="first-col">25. Overall, how do you rate your experience in this course?</td>
+              <td><input type="radio" value="none" name="name" /></td>
+              <td><input type="radio" value="none" name="name" /></td>
+              <td><input type="radio" value="none" name="name" /></td>
+              <td><input type="radio" value="none" name="name" /></td>
+            </tr>
+          </table>
+        </div>
+        <p class="comments">Comments</p>
+        <textarea rows="5"></textarea>
+        <h5>Student self evaluation</h5>
+        <div>
+          <h4>Untitled</h4>
+          <table>
+            <tr>
+              <th class="first-col"></th>
+              <th>Strongly Disagree</th>
+              <th>Disagree</th>
+              <th>Neutral</th>
+              <th>Agree</th>
+              <th>Strongly Agree</th>
+            </tr>
+            <tr>
+              <td class="first-col">26. I contributed constructively during in-class activities</td>
+              <td><input type="radio" value="none" name="contributed" /></td>
+              <td><input type="radio" value="none" name="contributed" /></td>
+              <td><input type="radio" value="none" name="contributed" /></td>
+              <td><input type="radio" value="none" name="contributed" /></td>
+              <td><input type="radio" value="none" name="contributed" /></td>
+            </tr>
+            <tr>
+              <td class="first-col">27. I feel I am achieving the learning outcomes.</td>
+              <td><input type="radio" value="none" name="feel" /></td>
+              <td><input type="radio" value="none" name="feel" /></td>
+              <td><input type="radio" value="none" name="feel" /></td>
+              <td><input type="radio" value="none" name="feel" /></td>
+              <td><input type="radio" value="none" name="feel" /></td>
+            </tr>
+          </table>
+        </div>
+        <p class="comments">Comments</p>
+        <textarea rows="5"></textarea>
+        <h5>Comments on strengths and ways of improvement</h5>
+        <p class="comments">What changes would you recommend to improve this course?</p>
+        <textarea rows="5"></textarea>
+        <p class="comments">What did you like best about your instructors teaching?</p>
+        <textarea rows="5"></textarea>
+        <p class="comments">What did you like least about your instructor’s teaching?</p>
+        <textarea rows="5"></textarea>
+        <p class="comments">Any further, constructive comment</p>
+        <textarea rows="5"></textarea>
         <div class="btn-block">
-          <button type="submit" href="/">Submit</button>
+          <button type="submit" href="/">Send</button>
         </div>
       </form>
     </div>
-<script >
-	var a = document.getElementByID("fee").value;
-	var b = document.getElementByID("fee1").value;
-	var c = document.getElementByID("fee2").value;
-	var result = a+b+c;
-	function calcNumbers(){
-		document.getElementByID("result").innerHTML = result;
-	}
-</script>
   </body>
 </html>
